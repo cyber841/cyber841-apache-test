@@ -1,0 +1,11 @@
+name: Apache Hudi Shadow Test
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for legacy PR title format
+        run: |
+          title="${{ github.event.pull_request.title }}"
+          echo "Checking PR title: $title"
